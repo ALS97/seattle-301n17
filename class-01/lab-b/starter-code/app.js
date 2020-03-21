@@ -7,7 +7,7 @@ const theOldWay = function(course) {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log('The old way:', theOldWay('Code 301'));
+console.log('The old way:', theOldWay('Code 301'));
 
 
 // STEP 2
@@ -18,7 +18,7 @@ const theNewWay = (course) => {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log('The new way:', theNewWay('Code 301'));
+console.log('The new way:', theNewWay('Code 301'));
 
 
 // STEP 3
@@ -28,7 +28,7 @@ const withoutParens = course => {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log('Without parens:', withoutParens('Code 301'));
+console.log('Without parens:', withoutParens('Code 301'));
 
 
 // STEP 4
@@ -38,7 +38,7 @@ const withoutParens = course => {
 const oneLiner = course => `I cam currently enrolled in ${course}`;
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log('As a one-liner:', oneLiner('Code 301'));
+console.log('As a one-liner:', oneLiner('Code 301'));
 
 
 // STEP 5
@@ -108,15 +108,15 @@ const newObject = array => ({
 
 
 
-let sum = function(a, b, c, d) {
+let sum = (a, b, c, d) => {
   return a + b + c + d;
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(sum(1, 2, 3, 4));
+console.log(sum(1, 2, 3, 4));
 
 
-let objectLit = function() {
+let objectLit = () => {
   return {
     key1: 'value1',
     key2: 'value2',
