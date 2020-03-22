@@ -1,0 +1,25 @@
+body {
+    background: #fff;
+  }
+  #Logo{
+    padding-bottom: 25px;
+    color: black;
+    text-decoration: none;
+  }
+
+  
+#logo h1 {
+    padding-left: 50px;
+  
+  }
+
+#slogan{
+    padding-left: 55px;
+    color: #a3a4a2;
+}
+hr{
+    background-image: url('../img/hr.png');
+}
+h2 {
+    margin-top: 50px;
+}
