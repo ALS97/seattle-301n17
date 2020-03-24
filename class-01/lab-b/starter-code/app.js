@@ -135,7 +135,7 @@ let sumAndProduct = function(a, b) {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(sumAndProduct(3, 9));
+console.log(sumAndProduct(3, 9));
 
 
 let message = function(name) {
