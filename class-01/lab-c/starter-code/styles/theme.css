@@ -23,3 +23,6 @@ hr{
 h2 {
     margin-top: 50px;
 }
+.print, .date {
+  color: #a9a8a5;
+}
