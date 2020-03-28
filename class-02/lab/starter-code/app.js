@@ -2,17 +2,24 @@
 
 
 const store =[];
-ConstHorn.prototype.render = function (){
-  const tpl = $('#photo-template').html();
-  const $createsection = $('<section></section>');
-  $createsection.html(tpl);
-  $createsection.find('h2').text(this.title);
-  $createsection.find('img').attr('src', this.image_url);
-  $createsection.find('p').text(this.desc);
-  $('main').append($createsection);
+// ConstHorn.prototype.render = function (){
+//   const tpl = $('#photo-template').html();
+//   const $createsection = $('<section></section>');
+//   $createsection.html(tpl);
+//   $createsection.find('h2').text(this.title);
+//   $createsection.find('img').attr('src', this.image_url);
+//   $createsection.find('p').text(this.desc);
+//   $('main').append($createsection);
+  // got help from Will Kroger
 
 
-};
+
+
+function renderCreature(horn){
+  let template = $(`#${'creature-template'}`).html();
+  let markup = Mustache.render(template, horn);
+  $(`#${'photo-template'}`).append(markup);
+}
 
 $(document).ready(function () {
 
@@ -20,8 +27,9 @@ $(document).ready(function () {
   // Asynchronous Javascipt And XML (JSON)
   $.ajax('page-1.json')
     .then(hrn => {
-      hrn.forEach((type) => {
-        new ConstHorn(type).render();
+      hrn.forEach((horn) => {
+        // new ConstHorn(type).render();
+        renderCreature(horn);
         keyword();
         dropdown();
         
@@ -30,6 +38,10 @@ $(document).ready(function () {
     });
 });
 console.log(store);
+
+function displaykeywords(){
+
+}
 let keywordArr = [];
 
 function keyword() {
@@ -45,7 +57,7 @@ function dropdown(){
   click.empty();
   keywordArr.forEach(keyword =>{
     let sort = $(`<option value = ${keyword}>${keyword}</option>`);
-    click.append(sort);
+    $('option').append(sort);
   });
 }
 
