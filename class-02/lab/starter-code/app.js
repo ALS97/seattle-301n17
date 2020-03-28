@@ -1,6 +1,6 @@
 'use strict'
 
-
+const keywordArr = [];
 const store =[];
 // ConstHorn.prototype.render = function (){
 //   const tpl = $('#photo-template').html();
@@ -10,7 +10,7 @@ const store =[];
 //   $createsection.find('img').attr('src', this.image_url);
 //   $createsection.find('p').text(this.desc);
 //   $('main').append($createsection);
-  // got help from Will Kroger
+// got help from Will Kroger
 
 
 
@@ -30,42 +30,46 @@ $(document).ready(function () {
       hrn.forEach((horn) => {
         // new ConstHorn(type).render();
         renderCreature(horn);
-        keyword();
-        dropdown();
+        if(!keywordArr.includes(horn.keyword)){
+          keywordArr.push(horn.keyword);
+        }
+        
         
         
       });
+      displaykeywords();
     });
 });
-console.log(store);
+
 
 function displaykeywords(){
-
-}
-let keywordArr = [];
-
-function keyword() {
-  store.forEach(val =>{
-    if(!keywordArr.includes(val.keyword)){
-      keywordArr.push(val.keyword);
-    }
-  });
+  keywordArr.sort();
+  for(let i= 0; i< keywordArr.length; i++){
+    $('select').append(`<option value="${keywordArr[i]}">${keywordArr[i]}</option>`);
+  }
 }
 
-function dropdown(){
-  let click = $('#sort');
-  click.empty();
-  keywordArr.forEach(keyword =>{
-    let sort = $(`<option value = ${keyword}>${keyword}</option>`);
-    $('option').append(sort);
-  });
-}
 
-function ConstHorn(Horn) {
-  this.title = Horn.title;
-  this.image_url = Horn.image_url;
-  this.keyword = Horn.keyword;
-  this.hornnum = Horn.hornnum;
-  this.desc = Horn.desc;
-  store.push(this);
-}
+// function keyword() {
+//   store.forEach(val =>{
+
+//   });
+// }
+
+// function dropdown(){
+//   let click = $('#sort');
+//   click.empty();
+//   keywordArr.forEach(keyword =>{
+//     let sort = $(`<option value = ${keyword}>${keyword}</option>`);
+//     $('option').append(sort);
+//   });
+// }
+
+// function ConstHorn(Horn) {
+//   this.title = Horn.title;
+//   this.image_url = Horn.image_url;
+//   this.keyword = Horn.keyword;
+//   this.hornnum = Horn.hornnum;
+//   this.desc = Horn.desc;
+//   store.push(this);
+// }
