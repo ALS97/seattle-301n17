@@ -5,6 +5,14 @@
   <head>
     <title>The Gallery of Horns</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = 'stylesheet' href = 'style.css'/>
+    <script id="creature-template" type="x-tmpl-mustache">
+      <section class = "{{keyword}}">
+        <h2> {{title}} </h2>
+        <img src="{{image_url}}" alt="{{keyword}}">
+        <p id = "desc"> {{description}} </p>
+      </section>
+    </script>
   </head>
   <body>
     <header>
@@ -13,15 +21,15 @@
         <option value="default">Filter by Keyword</option>
       </select>
     </header>
-    <main>
+    <main id = "flexcontainer">
       <section id="photo-template">
-        <h2></h2>
-        <img src="" alt="">
-        <p></p>
       </section>
     </main>
     <footer>
       &copy; 2018 Code Fellows
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/mustache@latest"></script>
+    <script src="app.js"></script>
   </body>
 </html>
