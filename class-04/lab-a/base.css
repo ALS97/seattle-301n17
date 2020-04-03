@@ -1,10 +1,15 @@
 *{
     box-sizing: border-box;
 }
+body, main{
+    grid-template-columns: 240px 240px;
+    grid-template-rows: 75px 150px 125px 125px 250px 250px 80px;
+    display: grid;
+}
 
 
- #cont1{
-        /* border: 2px solid black; */
+ /* #cont1{
+
         margin: auto;
         text-align: center;
         display:grid;
@@ -17,7 +22,7 @@
         line-height: 250px;
         width:480px;
         margin:auto;
-        /* display:flex; */
+
         text-align:center;
         display:grid;
     }
@@ -27,15 +32,18 @@
         line-height: 250px;
         width:480px;
         margin:auto;
-        /* display:flex; */
+     
         text-align: center;
     }
 
 #cont4{
         text-align: center;
-    }
+    } */
 
 @media only screen and (min-width:768px){
+    *{
+        box-sizing: border-box;
+    }
     body{
         /* height:700px;
         width:960px; */
